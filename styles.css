@@ -44,7 +44,7 @@ body {
       margin-top: 25px;
     }
 
-    .btn button {
+    .btn, .button {
       background-color: #1976d2;
       color: white;
       padding: 12px 24px;
@@ -55,7 +55,7 @@ body {
       transition: background 0.3s ease;
     }
 
-    .btn button:hover {
+    .btn .button:hover {
       background-color: #125aa1;
     }
 
@@ -72,7 +72,7 @@ body {
         font-size: 15px;
       }
 
-      .btn button {
+      .btn .button {
         width: 100%;
       }
     }
