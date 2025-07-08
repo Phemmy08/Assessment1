@@ -3,300 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velocity Flex Assessment Portal</title>
+    <title>Velocity Flex Company - Assessment Portal</title>
     <link rel="stylesheet" href="assessment.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
             <div class="logo">
-                <h1><i class="fas fa-rocket"></i> Velocity Flex</h1>
-                <p>Assessment Portal</p>
+                <i class="fas fa-rocket"></i>
+                <h1>Velocity Flex</h1>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Introduction Section -->
-            <section class="intro-section animate-fade-in">
-                <div class="intro-card">
-                    <h2><i class="fas fa-clipboard-list"></i> Assessment Introduction</h2>
-                    <p>Welcome to the official assessment portal for Velocity Flex Company. This evaluation helps us determine your readiness for remote employment, based on communication, critical thinking, typing speed, and role-specific skills.</p>
-                    <div class="alert-box">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>Important:</strong> A minimum score of 70% is required to move forward in the hiring process. Selected applicants will receive interview details within 24–48 hours.
-                    </div>
+        <!-- Introduction -->
+        <section class="intro-section">
+            <div class="intro-content">
+                <h2><i class="fas fa-clipboard-check"></i> Assessment Portal</h2>
+                <p>Welcome to the official assessment portal for Velocity Flex Company. This evaluation helps us determine your readiness for remote employment, based on communication, critical thinking, typing speed, and role-specific skills.</p>
+                <div class="warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Minimum score of 70% required to proceed. Selected applicants will receive interview details within 24–48 hours.</span>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Assessment Form -->
-            <form id="assessmentForm" class="assessment-form">
-                
-                <!-- Section 1: Typing Speed -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-keyboard"></i> Section 1 - Typing Speed & Accuracy</h3>
-                        <span class="points">10 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="instruction-box">
-                            <p>Go to <a href="https://www.typingtest.com/" target="_blank">TypingTest.com</a> and take a 1-minute test</p>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Screenshot of Results</label>
-                            <input type="file" id="typingScreenshot" accept="image/*" required>
-                            <div class="file-upload-area" onclick="document.getElementById('typingScreenshot').click()">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Click to upload screenshot</p>
-                            </div>
-                        </div>
-                        <div class="scoring-info">
+        <!-- Assessment Form -->
+        <form id="assessmentForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+            
+            <!-- Section 1: Typing Speed -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-keyboard"></i> Section 1 - Typing Speed & Accuracy</h3>
+                    <span class="points">10 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="instruction">
+                        <p>Go to <a href="https://www.typingtest.com/" target="_blank">TypingTest.com</a>, select a 1-minute test, and upload your results screenshot.</p>
+                        <div class="scoring">
                             <h4>Scoring:</h4>
                             <ul>
-                                <li>0-34 WPM = 0 pts</li>
-                                <li>35-39 WPM = 5 pts</li>
+                                <li>0–34 WPM = 0 pts</li>
+                                <li>35–39 WPM = 5 pts</li>
                                 <li>40+ WPM = 10 pts</li>
                             </ul>
                         </div>
                     </div>
-                </section>
+                    <div class="file-upload">
+                        <label for="typingScreenshot">Upload Typing Test Screenshot *</label>
+                        <input type="file" id="typingScreenshot" name="typingScreenshot" accept="image/*" required>
+                        <div class="file-info">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload or drag and drop</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Section 2: Personal & Technical Setup -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-cogs"></i> Section 2 - Personal & Technical Setup</h3>
-                        <span class="points">5 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" id="fullName" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Device in Use</label>
-                                <select id="device" required>
-                                    <option value="">Select device</option>
-                                    <option value="laptop">Laptop</option>
-                                    <option value="desktop">Desktop</option>
-                                    <option value="tablet">Tablet</option>
-                                    <option value="none">None</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Is Your Internet Stable?</label>
-                                <select id="internetStable" required>
-                                    <option value="">Select option</option>
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
-                                    <option value="sometimes">Sometimes</option>
-                                </select>
-                            </div>
+            <!-- Section 2: Personal & Technical Setup -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-cogs"></i> Section 2 - Personal & Technical Setup</h3>
+                    <span class="points">5 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
                         </div>
                         <div class="form-group">
-                            <label>Upload Screenshot of Internet Speed (Speedtest.net)</label>
-                            <input type="file" id="speedtestScreenshot" accept="image/*" required>
-                            <div class="file-upload-area" onclick="document.getElementById('speedtestScreenshot').click()">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Click to upload speed test screenshot</p>
-                            </div>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
                     </div>
-                </section>
-
-                <!-- Section 3: Computer & Software Skills -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-laptop-code"></i> Section 3 - Computer & Software Skills</h3>
-                        <span class="points">10 Points</span>
-                    </div>
-                    <div class="section-content">
+                    <div class="form-row">
                         <div class="form-group">
-                            <label>Q1: Which of the following tools have you used? (Select all that apply)</label>
-                            <div class="checkbox-grid">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="google-docs"> Google Docs
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="ms-word"> MS Word
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="google-sheets"> Google Sheets
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="excel"> Excel
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="zoom"> Zoom
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="slack"> Slack
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="gmail"> Gmail
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="tools" value="crm"> CRM Software
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Q2: How do you rename and organize a document professionally for a company?</label>
-                            <textarea id="documentOrganization" rows="4" placeholder="Describe your approach to professional document organization..."></textarea>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 4: Scenario-Based Judgement -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-lightbulb"></i> Section 4 - Scenario-Based Judgement</h3>
-                        <span class="points">10 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="form-group">
-                            <label>Scenario 1: A client emails you angrily about not receiving their service on time. The error came from another department. How do you respond, escalate, and follow up professionally?</label>
-                            <textarea id="scenario1" rows="4" placeholder="Describe your professional response approach..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Scenario 2: Your internet goes off during a live Zoom with a supervisor. What actions do you take immediately, and how do you recover the situation?</label>
-                            <textarea id="scenario2" rows="4" placeholder="Describe your recovery strategy..."></textarea>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 5: Role-Specific Tasks -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-user-tie"></i> Section 5 - Role-Specific Tasks</h3>
-                        <span class="points">15 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="form-group">
-                            <label>Choose One Role:</label>
-                            <select id="roleSelection" onchange="showRoleTask()">
-                                <option value="">Select a role</option>
-                                <option value="data-entry">Data Entry Clerk</option>
-                                <option value="customer-support">Customer Support Rep</option>
-                                <option value="virtual-assistant">Virtual Assistant</option>
-                                <option value="payroll-clerk">Payroll Clerk</option>
-                                <option value="accounting-manager">Accounting Manager</option>
-                                <option value="social-media">Social Media Manager</option>
+                            <label for="device">Device in Use *</label>
+                            <select id="device" name="device" required>
+                                <option value="">Select Device</option>
+                                <option value="laptop">Laptop</option>
+                                <option value="desktop">Desktop</option>
+                                <option value="tablet">Tablet</option>
+                                <option value="none">None</option>
                             </select>
                         </div>
-                        
-                        <div id="roleTaskContent" class="role-task-content"></div>
-                    </div>
-                </section>
-
-                <!-- Section 6: Excel Assessment -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-file-excel"></i> Section 6 - Excel Assessment</h3>
-                        <span class="points">10 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="instruction-box">
-                            <h4>Task Instructions:</h4>
-                            <ul>
-                                <li>Calculate total expenses per employee</li>
-                                <li>Use basic formulas: SUM, AVERAGE</li>
-                                <li>Filter rows for amounts above $500</li>
-                                <li>Return the filled file or upload a screenshot of your result</li>
-                            </ul>
-                        </div>
                         <div class="form-group">
-                            <label>Upload Completed Excel File or Screenshot</label>
-                            <input type="file" id="excelFile" accept=".xlsx,.xls,image/*" required>
-                            <div class="file-upload-area" onclick="document.getElementById('excelFile').click()">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Click to upload Excel file or screenshot</p>
-                            </div>
+                            <label for="internetStable">Is Your Internet Stable? *</label>
+                            <select id="internetStable" name="internetStable" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="sometimes">Sometimes</option>
+                            </select>
                         </div>
                     </div>
-                </section>
+                    <div class="file-upload">
+                        <label for="speedTestScreenshot">Upload Speed Test Screenshot (Speedtest.net) *</label>
+                        <input type="file" id="speedTestScreenshot" name="speedTestScreenshot" accept="image/*" required>
+                        <div class="file-info">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Click to upload or drag and drop</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Section 7: Remote Work Readiness -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-home"></i> Section 7 - Remote Work Readiness</h3>
-                        <span class="points">5 Points</span>
-                    </div>
-                    <div class="section-content">
-                        <div class="form-group">
-                            <label>Q1: How do you stay focused while working remotely?</label>
-                            <textarea id="remoteFocus" rows="3" placeholder="Share your strategies for maintaining focus..."></textarea>
+            <!-- Section 3: Computer & Software Skills -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-desktop"></i> Section 3 - Computer & Software Skills</h3>
+                    <span class="points">10 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label>Q1: Which of the following tools have you used? (Select all that apply)</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="google-docs">
+                                <span class="checkmark"></span>
+                                Google Docs
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="ms-word">
+                                <span class="checkmark"></span>
+                                MS Word
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="google-sheets">
+                                <span class="checkmark"></span>
+                                Google Sheets
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="excel">
+                                <span class="checkmark"></span>
+                                Excel
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="zoom">
+                                <span class="checkmark"></span>
+                                Zoom
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="slack">
+                                <span class="checkmark"></span>
+                                Slack
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="gmail">
+                                <span class="checkmark"></span>
+                                Gmail
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="tools" value="crm-software">
+                                <span class="checkmark"></span>
+                                CRM Software
+                            </label>
                         </div>
-                        <div class="form-group">
-                            <label>Q2: What steps do you take when your system crashes during work?</label>
-                            <textarea id="systemCrash" rows="3" placeholder="Describe your recovery process..."></textarea>
-                        </div>
                     </div>
-                </section>
+                    <div class="form-group">
+                        <label for="documentOrganization">Q2: How do you rename and organize a document professionally for a company? (Short paragraph) *</label>
+                        <textarea id="documentOrganization" name="documentOrganization" rows="4" required placeholder="Describe your approach to professional document organization..."></textarea>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Section 8: Video Introduction -->
-                <section class="section animate-slide-in">
-                    <div class="section-header">
-                        <h3><i class="fas fa-video"></i> Section 8 - Video Introduction</h3>
-                        <span class="points bonus">Bonus 5 Points</span>
+            <!-- Section 4: Scenario-Based Judgement -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-lightbulb"></i> Section 4 - Scenario-Based Judgement</h3>
+                    <span class="points">10 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label for="scenario1">Scenario 1: A client emails you angrily about not receiving their service on time. The error came from another department. How do you respond, escalate, and follow up professionally? *</label>
+                        <textarea id="scenario1" name="scenario1" rows="5" required placeholder="Describe your professional response approach..."></textarea>
                     </div>
-                    <div class="section-content">
-                        <div class="instruction-box">
-                            <p>Record a 30–60 second intro including:</p>
-                            <ul>
-                                <li>Who you are</li>
-                                <li>Why you want to work at Velocity Flex</li>
-                                <li>A fun fact about you</li>
-                            </ul>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Video or Paste Link</label>
-                            <input type="file" id="videoFile" accept="video/*">
-                            <div class="file-upload-area" onclick="document.getElementById('videoFile').click()">
-                                <i class="fas fa-video"></i>
-                                <p>Click to upload video (optional)</p>
-                            </div>
-                            <input type="url" id="videoLink" placeholder="Or paste video link here" class="video-link-input">
+                    <div class="form-group">
+                        <label for="scenario2">Scenario 2: Your internet goes off during a live Zoom with a supervisor. What actions do you take immediately, and how do you recover the situation? *</label>
+                        <textarea id="scenario2" name="scenario2" rows="5" required placeholder="Describe your immediate actions and recovery steps..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Role-Specific Tasks -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-briefcase"></i> Section 5 - Role-Specific Tasks</h3>
+                    <span class="points">15 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label for="roleChoice">Choose Your Role *</label>
+                        <select id="roleChoice" name="roleChoice" required>
+                            <option value="">Select Role</option>
+                            <option value="data-entry">Data Entry Clerk</option>
+                            <option value="customer-support">Customer Support Rep</option>
+                            <option value="virtual-assistant">Virtual Assistant</option>
+                            <option value="payroll-clerk">Payroll Clerk</option>
+                            <option value="accounting-manager">Accounting Manager</option>
+                            <option value="social-media-manager">Social Media Manager</option>
+                        </select>
+                    </div>
+                    
+                    <div id="roleTask" class="role-task-container">
+                        <!-- Role-specific content will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Excel Assessment -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-table"></i> Section 6 - Excel Assessment</h3>
+                    <span class="points">10 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="instruction">
+                        <p>Complete the Excel task using basic formulas (SUM, AVERAGE), calculate total expenses per employee, and filter rows for amounts above $500.</p>
+                        <div class="download-link">
+                            <a href="#" class="btn-download">
+                                <i class="fas fa-download"></i>
+                                Download Excel Sheet
+                            </a>
                         </div>
                     </div>
-                </section>
+                    <div class="file-upload">
+                        <label for="excelResult">Upload Completed Excel File or Screenshot *</label>
+                        <input type="file" id="excelResult" name="excelResult" accept=".xlsx,.xls,image/*" required>
+                        <div class="file-info">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Upload Excel file or screenshot</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Submit Section -->
-                <section class="submit-section">
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        Submit Assessment
-                    </button>
-                </section>
-            </form>
-        </div>
-    </main>
+            <!-- Section 7: Remote Work Readiness -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-home"></i> Section 7 - Remote Work Readiness</h3>
+                    <span class="points">5 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label for="focusStrategy">Q1: How do you stay focused while working remotely? *</label>
+                        <textarea id="focusStrategy" name="focusStrategy" rows="3" required placeholder="Describe your strategies for maintaining focus..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="systemCrash">Q2: What steps do you take when your system crashes during work? *</label>
+                        <textarea id="systemCrash" name="systemCrash" rows="3" required placeholder="Describe your troubleshooting approach..."></textarea>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Confirmation Modal -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-check-circle"></i> Assessment Submitted!</h3>
-            </div>
-            <div class="modal-body">
-                <p>Thank you for submitting your assessment. We will review your responses and contact you within 24-48 hours if you meet our requirements.</p>
-                <p><strong>Your submission has been recorded successfully.</strong></p>
-            </div>
-            <div class="modal-footer">
-                <button onclick="closeModal()" class="btn-primary">Close</button>
+            <!-- Section 8: Video Introduction -->
+            <section class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-video"></i> Section 8 - Video Introduction</h3>
+                    <span class="points bonus">Bonus 5 Points</span>
+                </div>
+                <div class="section-content">
+                    <div class="instruction">
+                        <p>Record a 30–60 second introduction including who you are, why you want to work at Velocity Flex, and a fun fact about you.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoIntro">Upload Video or Paste Link (Optional)</label>
+                        <input type="url" id="videoIntro" name="videoIntro" placeholder="https://example.com/your-video">
+                        <div class="or-divider">OR</div>
+                        <input type="file" id="videoFile" name="videoFile" accept="video/*">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Section -->
+            <section class="submit-section">
+                <div class="score-display">
+                    <h3>Total Score: <span id="totalScore">0</span>/65 Points</h3>
+                    <div class="score-bar">
+                        <div class="score-fill" id="scoreFill"></div>
+                    </div>
+                    <p class="score-status" id="scoreStatus">Complete all sections to see your score</p>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Assessment
+                </button>
+            </section>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message hidden">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank you for submitting your assessment!</h3>
+                <p>Your response has been recorded. Selected candidates will receive interview details within 24-48 hours.</p>
             </div>
         </div>
     </div>
