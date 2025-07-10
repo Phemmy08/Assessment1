@@ -21,6 +21,25 @@
     });
 
 
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const uploadBox = document.getElementById('speedTestUploadBox');
+    const fileInput = document.getElementById('speedTestScreenshot');
+    const fileLabel = document.getElementById('speedTestFileLabel');
+
+    // Open file picker on click
+    uploadBox.addEventListener('click', () => fileInput.click());
+
+    // Show selected file name
+    fileInput.addEventListener('change', () => {
+      const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'Click to upload or drag and drop';
+      fileLabel.textContent = fileName;
+    });
+  });
+
+
+
+
    
 document.getElementById('roleChoice').addEventListener('change', function () {
     const container = document.getElementById('roleTask');
@@ -124,8 +143,8 @@ document.getElementById('roleChoice').addEventListener('change', function () {
 
 
 
-  
-document.getElementById('assessmentForm').addEventListener('submit', function (e) {
+
+/* document.getElementById('assessmentForm').addEventListener('submit', function (e) {
     e.preventDefault(); // prevent default submit
 
     const form = this;
@@ -152,5 +171,39 @@ document.getElementById('assessmentForm').addEventListener('submit', function (e
     .catch(() => {
         alert('There was a network error. Please try again later.');
     });
-});
+}); */
+
+
+/* document.getElementById('assessmentForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            form.style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+        } else {
+            return response.json().then(data => {
+                throw new Error(data.message || "Formspree error");
+            });
+        }
+    })
+    .catch(error => {
+        alert("Something went wrong: " + error.message);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Assessment';
+    });
+}); */
 

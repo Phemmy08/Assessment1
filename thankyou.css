@@ -1,0 +1,43 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, #0684d7, #0280cd);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    .emoji {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }

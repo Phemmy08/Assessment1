@@ -223,44 +223,36 @@ body {
 
 /* File Upload */
 .file-upload {
-    margin-top: 1.5rem;
-}
-
-.file-upload label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.file-upload input[type="file"] {
-    display: none;
+  margin-top: 1.5rem;
 }
 
 .file-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 2rem;
-    background-color: #fafafa;
-    color: #777;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fdfdfd;
+  transition: all 0.3s ease;
 }
 
 .file-info:hover {
-    background-color: #f0f8ff;
-    border-color: #3498db;
-    color: #3498db;
+  background-color: #f0f8ff;
+  border-color: #3498db;
+  color: #3498db;
 }
 
 .file-info i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
+
+.file-info span {
+  font-size: 0.95rem;
+  color: #555;
+}
+
 
 /* Fade in animation */
 @keyframes fadeInUp {

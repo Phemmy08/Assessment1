@@ -33,7 +33,15 @@
         </section>
 
         <!-- Assessment Form -->
-        <form id="assessmentForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+       
+            <form
+  id="assessmentForm"
+  action="https://formsubmit.co/velocityflexstaffing@gmail.com"
+  method="POST"
+  enctype="multipart/form-data">
+  <input type="hidden" name="_next" value="https://www.dayspringseraphicchurch.org/">
+<input type="hidden" name="_subject" value="New Assessment Submission">
+<input type="hidden" name="_captcha" value="false">
             
             <!-- Section 1: Typing Speed -->
             <section class="section">
@@ -64,54 +72,58 @@
                 </div>
             </section>
 
-            <!-- Section 2: Personal & Technical Setup -->
-            <section class="section">
-                <div class="section-header">
-                    <h3><i class="fas fa-cogs"></i> Section 2 - Personal & Technical Setup</h3>
-                    <span class="points">5 Points</span>
-                </div>
-                <div class="section-content">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="device">Device in Use *</label>
-                            <select id="device" name="device" required>
-                                <option value="">Select Device</option>
-                                <option value="laptop">Laptop</option>
-                                <option value="desktop">Desktop</option>
-                                <option value="tablet">Tablet</option>
-                                <option value="none">None</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="internetStable">Is Your Internet Stable? *</label>
-                            <select id="internetStable" name="internetStable" required>
-                                <option value="">Select Option</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                                <option value="sometimes">Sometimes</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="file-upload">
-                        <label for="speedTestScreenshot">Upload Speed Test Screenshot (Speedtest.net) *</label>
-                        <input type="file" id="speedTestScreenshot" name="speedTestScreenshot" accept="image/*" required>
-                        <div class="file-info">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <span>Click to upload or drag and drop</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           <!-- Section 2: Personal & Technical Setup -->
+<section class="section">
+  <div class="section-header">
+    <h3><i class="fas fa-cogs"></i> Section 2 - Personal & Technical Setup</h3>
+    <span class="points">5 Points</span>
+  </div>
+
+  <div class="section-content">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="device">Device in Use *</label>
+        <select id="device" name="device" required>
+          <option value="">Select Device</option>
+          <option value="laptop">Laptop</option>
+          <option value="desktop">Desktop</option>
+          <option value="tablet">Tablet</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="internetStable">Is Your Internet Stable? *</label>
+        <select id="internetStable" name="internetStable" required>
+          <option value="">Select Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          <option value="sometimes">Sometimes</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="file-upload">
+      <label>Upload Speed Test Screenshot (Speedtest.net) *</label>
+      <div class="file-info" id="speedTestUploadBox">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <span id="speedTestFileLabel">Click to upload or drag and drop</span>
+      </div>
+      <input type="file" id="speedTestScreenshot" name="speedTestScreenshot" accept="image/*" required style="display: none;" />
+    </div>
+  </div>
+</section>
+
 
             <!-- Section 3: Computer & Software Skills -->
             <section class="section">
