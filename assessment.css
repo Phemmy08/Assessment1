@@ -358,7 +358,7 @@ body {
 @media (max-width: 400px) {
     .form-row {
         flex-direction: column;
-        margin: auto;
+        margin-bottom: auto;
         padding: auto;
         gap: auto;
     }
@@ -367,7 +367,7 @@ body {
 @media (max-width: 300px) {
     .form-row {
         flex-direction: column;
-        margin: auto;
+        margin-bottom: auto;
         padding: auto;
         gap: auto;
     }
