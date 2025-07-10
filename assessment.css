@@ -355,10 +355,23 @@ body {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .form-row {
         flex-direction: column;
+        margin: auto;
+        padding: auto;
+        gap: auto;
     }
+    
+}
+@media (max-width: 300px) {
+    .form-row {
+        flex-direction: column;
+        margin: auto;
+        padding: auto;
+        gap: auto;
+    }
+    
 }
 
 
@@ -448,6 +461,12 @@ textarea:focus {
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Mobile Adjustments */
+@media (max-width: 300px) {
     .checkbox-grid {
         grid-template-columns: 1fr;
     }
